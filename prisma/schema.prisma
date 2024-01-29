@@ -7,4 +7,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Student {
+  id    String   @id @default(uuid())
+  name  String
+  email String
+  ra    String   @unique
+  cpf   String
+  
+  createAT DateTime @default(now())
+
+  @@map("Students")
+}
 

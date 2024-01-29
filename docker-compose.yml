@@ -13,19 +13,19 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  nest-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    depends_on:
-      - postgres
-    environment:
-      DATABASE_URL: postgres://admin:admin@postgres:5432/university
-    volumes:
-      - ./src:/app/src
-    command: ["npm", "run", "start:dev"]
+  # nest-app:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - postgres
+  #   environment:
+  #     DATABASE_URL: postgres://admin:admin@postgres:5432/university
+  #   volumes:
+  #     - ./src:/app/src
+  #   command: ["npm", "run", "start:dev"]
 
   pgadmin:
      image: dpage/pgadmin4
