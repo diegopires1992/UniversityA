@@ -13,7 +13,7 @@ model Student {
   email String
   ra    String   @unique
   cpf   String
-  
+  isActive Boolean  @default(true)
   createAT DateTime @default(now())
 
   @@map("Students")

@@ -8,17 +8,83 @@ export class StudentPrismaRepository implements IStudentRepository {
 
     constructor(private prisma: PrismaService) { }
 
-    async findAllWithPagination(offset: number, pageSize: number): Promise<StudenCreatedDTO[]> {
-        return await this.prisma.student.findMany({
-            skip: offset,
-            take: pageSize,
-            orderBy: {
-                createAT: 'desc',
+    async findById(id: string): Promise<CreateStudenDTO | null> {
+        return await this.prisma.student.findFirst({
+            where: {
+                id: id,
+                isActive: true
+            },
+            select: {
+                name: true,
+                email: true,
+                ra: true,
+                cpf: true,
             },
         });
     }
 
-    async findByFiltersWithPagination(filters: FilterTermDTO, offset: number, pageSize: number): Promise<StudenCreatedDTO[]> {
+    async updateById(id: string, data: Partial<CreateStudenDTO>): Promise<CreateStudenDTO | null> {
+        const updatedStudent = await this.prisma.student.update({
+            where: {
+                ra: id,
+                isActive: true
+            },
+            data: {
+                name: data.name,
+                email: data.email,
+            },
+            select: {
+                name: true,
+                email: true,
+                ra: true,
+                cpf: true,
+            },
+        });
+
+        return updatedStudent;
+    }
+
+
+    async deleteById(id: string): Promise<CreateStudenDTO | null> {
+        const updatedStudent = await this.prisma.student.update({
+            where: {
+                ra: id,
+                isActive: true
+            },
+            data: {
+                isActive: false,
+            },
+            select: {
+                name: true,
+                email: true,
+                ra: true,
+                cpf: true,
+            },
+        });
+
+        return updatedStudent;
+    }
+
+    async findAllWithPagination(offset: number, pageSize: number): Promise<CreateStudenDTO[]> {
+        return await this.prisma.student.findMany({
+            skip: offset,
+            take: pageSize,
+            where: {
+                isActive: true,
+            },
+            orderBy: {
+                createAT: 'desc',
+            },
+            select: {
+                name: true,
+                email: true,
+                ra: true,
+                cpf: true,
+            },
+        });
+    }
+
+    async findByFiltersWithPagination(filters: FilterTermDTO, offset: number, pageSize: number): Promise<CreateStudenDTO[]> {
 
         const searchResult = await this.prisma.student.findMany({
             where: {
@@ -33,6 +99,12 @@ export class StudentPrismaRepository implements IStudentRepository {
             take: pageSize,
             orderBy: {
                 createAT: 'desc',
+            },
+            select: {
+                name: true,
+                email: true,
+                ra: true,
+                cpf: true,
             },
         });
 
