@@ -1,73 +1,55 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+UniversityA - Administrative Painel
+Introduction
+Welcome to the administrative panel of UniversityA! This project utilizes NestJS, Prisma, and Docker Compose to create a robust and scalable application. NestJS provides a powerful framework for building server-side applications, Prisma serves as an efficient database toolkit, and Docker Compose simplifies the deployment process by containerizing the application and its dependencies.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Prerequisites
+Before getting started, make sure you have the following installed:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Node.js
+Docker
+Docker Compose
+Getting Started
+Installation
+Clone the repository:
 
-## Description
+bash
+Copy code
+git clone https://github.com/diegopires1992/UniversityA
+cd UniversityA
+npm install
+Configuration
+Describe any configuration steps if needed.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Usage
+Describe how to use the application and provide any specific details or considerations.
 
-## Installation
+Docker Compose
+To run the application using Docker Compose:
 
-```bash
-$ npm install
-```
+Build the Docker images:
 
-## Running the app
+bash
+Copy code
+docker-compose build
+Start the containers:
 
-```bash
-# development
-$ npm run start
+bash
+Copy code
+docker-compose up
+To generate a database migration, run the command:
 
-# watch mode
-$ npm run start:dev
+bash
+Copy code
+npx prisma migrate dev --name add_profile
+After installation, run the command:
 
-# production mode
-$ npm run start:prod
-```
+bash
+Copy code
+npm run start:dev
+Contributing
+If you'd like to contribute to this project, please follow the guidelines in CONTRIBUTING.md.
 
-## Test
+License
+This project is licensed under the LICENSE - describe your license here.
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+This structure provides a clear and organized guide for users to understand, install, and use your UniversityA administrative panel. Feel free to customize it further based on your specific project details and preferences.
